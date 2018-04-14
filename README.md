@@ -11,4 +11,4 @@ Here you can play a classic "memory"-game by matching two simliar cards. When al
 
 ## Where to play
 
-Follow this link to play the game: (/index.html).
+Follow this link to play the game: (../index.html).
