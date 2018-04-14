@@ -1,0 +1,156 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff;
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: lightblue;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #1fa17e;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    background: #400c1a;
+    cursor: default;
+}
+
+.deck .card.nomatch {
+    background: #FF0031;
+    cursor: default;
+    animation-duration: 0.5s;
+    animation-name: wiggle;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #32ae36;
+    font-size: 33px;
+    animation-duration: 0.5s;
+    animation-name: pulse;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: center;
+    width: 80%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.score-panel .stars {
+    color: orange;
+    margin: 0;
+    padding: 0;
+    margin: 0 10px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+
+.score-panel .moves {
+    margin: 0 10px 0 5px;
+}
+
+.score-panel .restart {
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+#timer { 
+    margin: 0px 10px 0px 0px;
+ }
+
+
+
+/*animation when cards match / not match*/
+@keyframes wiggle {
+    12%  { transform: translateX(10px);  }
+    30%  { transform: translateX(-10px); }
+    45%  { transform: translateX(30px);  }
+    60%  { transform: translateX(-30px); }
+    100% { transform: translateX(0);    }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.20, 1.10, 1.20);
+  }
+
+  to {
+    transform: scale3d(1.30, 1.30 1.30);
+  }
+}
+
