@@ -1,156 +1,191 @@
 html {
-    box-sizing: border-box;
+     box-sizing: border-box;
 }
-
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
+ *, *::before, *::after {
+     box-sizing: inherit;
 }
-
-html,
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+ html, body {
+     width: 100%;
+     height: 100%;
+     margin: 0;
+     padding: 0;
 }
-
-body {
-    background: #ffffff;
-    font-family: 'Coda', cursive;
+ body {
+     background: #ffffff;
+     font-family: 'Coda', cursive;
 }
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+ .container {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
 }
-
-h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+ h1 {
+     font-family: 'Open Sans', sans-serif;
+     font-weight: 300;
 }
-
-/*
- * Styles for the deck of cards
- */
-
-.deck {
-    width: 660px;
-    min-height: 680px;
-    background: lightblue;
-    padding: 32px;
-    border-radius: 10px;
-    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 0 3em;
+/* Styles for the deck of cards */
+ .deck {
+     width: 660px;
+     min-height: 680px;
+     background: lightgrey;
+     padding: 32px;
+     border-radius: 10px;
+     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     align-items: center;
+     margin: 0 0 3em;
 }
-
-.deck .card {
-    height: 125px;
-    width: 125px;
-    background: #1fa17e;
-    font-size: 0;
-    color: #ffffff;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+ .deck .card {
+     height: 125px;
+     width: 125px;
+     background: #407387;
+     font-size: 0;
+     color: #ffffff;
+     border-radius: 8px;
+     cursor: pointer;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
-
-.deck .card.open {
-    background: #400c1a;
-    cursor: default;
+ .deck .card.open {
+     background: #400c1a;
+     cursor: default;
 }
-
-.deck .card.nomatch {
-    background: #FF0031;
-    cursor: default;
-    animation-duration: 0.5s;
-    animation-name: wiggle;
+ .deck .card.nomatch {
+     background: #FF0031;
+     cursor: default;
+     animation-duration: 0.4s;
+     animation-name: wiggle;
 }
-
-.deck .card.show {
-    font-size: 33px;
+ .deck .card.show {
+     font-size: 33px;
 }
-
-.deck .card.match {
-    cursor: default;
-    background: #32ae36;
-    font-size: 33px;
-    animation-duration: 0.5s;
-    animation-name: pulse;
+ .deck .card.match {
+     cursor: default;
+     background: #32ae36;
+     font-size: 33px;
+     animation-duration: 0.5s;
+     animation-name: pulse;
 }
-
-/*
- * Styles for the Score Panel
- */
-
-.score-panel {
-    text-align: center;
-    width: 80%;
-    margin-bottom: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+/* Styles for the score panel */
+ .score-panel {
+     text-align: center;
+     width: 80%;
+     margin-bottom: 10px;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
 }
-
-.score-panel .stars {
-    color: orange;
-    margin: 0;
-    padding: 0;
-    margin: 0 10px 0 0;
+ .score-panel .stars {
+     color: orange;
+     margin: 0;
+     padding: 0;
+     margin: 0 10px 0 0;
 }
-
-.score-panel .stars li {
-    list-style: none;
-    display: inline-block;
+ .score-panel .stars li {
+     list-style: none;
+     display: inline-block;
 }
-
-
-.score-panel .moves {
-    margin: 0 10px 0 5px;
+ .score-panel .moves {
+     margin: 0 10px 0 5px;
 }
-
-.score-panel .restart {
-    margin: 0px 10px;
-    cursor: pointer;
+ .score-panel .restart {
+     margin: 0px 10px;
+     cursor: pointer;
 }
-
-#timer { 
-    margin: 0px 10px 0px 0px;
- }
-
-
-
-/*animation when cards match / not match*/
-@keyframes wiggle {
-    12%  { transform: translateX(10px);  }
-    30%  { transform: translateX(-10px); }
-    45%  { transform: translateX(30px);  }
-    60%  { transform: translateX(-30px); }
-    100% { transform: translateX(0);    }
+/* Styles for the modals */
+ #result-modal, #restart-modal {
+     display: none;
+     position: fixed;
+     z-index: 1;
+     padding-top: 100px;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0,0,0,0.4);
 }
-
-@keyframes pulse {
-  from {
-    transform: scale3d(1, 1, 1);
-  }
-
-  50% {
-    transform: scale3d(1.20, 1.10, 1.20);
-  }
-
-  to {
-    transform: scale3d(1.30, 1.30 1.30);
-  }
+/* Styles for the buttons on refresh */
+ .yes-no {
+     width: 100%;
+     margin-bottom: 10px;
 }
-
+/* Styles for the modal content */
+ .modal-content {
+     background-color: #fefefe;
+     margin: auto;
+     padding: 20px;
+     border: 1px solid #888;
+     width: 20%;
+     border-radius: 15px;
+}
+/* The close button */
+ .close {
+     color: #aaaaaa;
+     float: right;
+     font-size: 28px;
+     font-weight: bold;
+}
+ .close:hover {
+     color: #000;
+     text-decoration: none;
+     cursor: pointer;
+}
+/* Styles for the timer */
+ #timer {
+     margin: 0px 10px 0px 0px;
+}
+/* Styles for the stars */
+ #totalStars li {
+     list-style: none;
+     display: inline-block;
+     color: orange;
+     padding: 0;
+     margin: 0 2px 0 0;
+}
+/* Animation when cards match / not match */
+ @keyframes wiggle {
+     12% {
+         transform: translateX(10px);
+    }
+     30% {
+         transform: translateX(-10px);
+    }
+     45% {
+         transform: translateX(30px);
+    }
+     60% {
+         transform: translateX(-30px);
+    }
+     100% {
+         transform: translateX(0);
+    }
+}
+ @keyframes pulse {
+     from {
+         transform: scale3d(1, 1, 1);
+    }
+     50% {
+         transform: scale3d(1.20, 1.10, 1.20);
+    }
+     to {
+         transform: scale3d(1.30, 1.30 1.30);
+    }
+}
+/* Media queries */
+ @media screen and (max-width: 500px) {
+     .deck {
+         width: 90%;
+         min-height: 400px;
+    }
+     .deck .card {
+         width: 20%;
+         height: 60px;
+         margin: 0 5px 0 0;
+    }
+}
