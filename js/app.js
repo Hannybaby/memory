@@ -29,12 +29,12 @@ let array = ['fa-diamond', 'fa-diamond',
     //Variables
 
     opened = [],
-    match, moves, executed = false,
-    board = $('.deck'),
-    scorePanel = $('.score-panel'),
-    moveNo = scorePanel.find('.moves'),
-    stars = scorePanel.find('i'),
-    restart = scorePanel.find('.restart')
+    match, moves, executed = false;
+    board = $('.deck');
+    scorePanel = $('.score-panel');
+    moveNo = scorePanel.find('.moves');
+    stars = scorePanel.find('i');
+    restart = scorePanel.find('.restart');
     totalStars = document.getElementsByClassName('stars');
     totalMoves = document.getElementsByClassName('moves');
 
@@ -57,56 +57,56 @@ function startGame() {
 
 board.on('click', '.card', function() {
     if (executed === true) {
-        return;
+        return
     };
     timer();
-    executed = true;
+    executed = true
 });
 
 //Open card on click
 
 board.on('click', '.card:not(".match, .open")', function() {
     if ($('.show').length > 1) {
-        return;
+        return
     }
     var item = $(this),
-        card = item.children('i').attr('class');
-    opened.push(card);
+        card = item.children('i').attr('class')
+    opened.push(card)
     item.addClass('open show');
 
     //Match cards yes / no 
     if (opened.length > 1) {
         if (card === opened[0]) {
-            board.find('.open').addClass('match');
+            board.find('.open').addClass('match')
             setTimeout(function() {
-                board.find('.match').removeClass('open show');
-            }, 800);
+                board.find('.match').removeClass('open show')
+            }, 800)
             match++;
-            opened = [];
+            opened = []
 
         } else {
-            board.find('.open').addClass('nomatch');
+            board.find('.open').addClass('nomatch')
             setTimeout(function() {
-                board.find('.open').removeClass('open show nomatch');
-            }, 530);
-            opened = [];
+                board.find('.open').removeClass('open show nomatch')
+            }, 530)
+            opened = []
         }
         //Counting moves
-        moves++;
-        rating(moves);
-        moveNo.html(moves + ' Moves');
+        moves++
+        rating(moves)
+        moveNo.html(moves + ' Moves')
     }
     //When all cards matched...
 
-    if (match === 8) { //8
-        rating(moves);
-        let score = rating(moves).noOfStars;
-        clearTimeout(t);
+    if (match === 1) { //8
+        rating(moves)
+        let score = rating(moves).noOfStars
+        clearTimeout(t)
         setTimeout(function() {
-            endGame();
-        }, 500);
+            endGame()
+        }, 500)
     }
-})
+});
 
 
 
@@ -119,18 +119,18 @@ firstStar = document.querySelector('.star-three');
 function rating(moves) {
     let noOfStars = 3;
     if (moves > 15 && moves <= 26) {
-        thirdStar.className = 'star-three fa fa-star-o';
+        thirdStar.className = 'star-three fa fa-star-o'
         noOfStars = 2;
     } else if (moves > 26 && moves <= 35) {
-        secondStar.className = 'star-two fa fa-star-o';
+        secondStar.className = 'star-two fa fa-star-o'
         noOfStars = 1;
     } else if (moves > 35) {
-        firstStar.className = 'star-one fa fa-star-o';
+        firstStar.className = 'star-one fa fa-star-o'
         noOfStars = 0;
     }
     return {
         noOfStars
-    };
+    }
 };
 
 
@@ -141,6 +141,9 @@ function endGame() {
     document.getElementById('totalTime').innerHTML = "Time played: " + time.innerHTML;
     document.getElementById('totalMoves').innerHTML = "Your moves: " + totalMoves[0].innerHTML;
     $('#result-modal').modal('show');
+    $('#refresh').click(function() {
+        location.reload();  
+    });
 
 };
 
