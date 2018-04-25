@@ -14,4 +14,4 @@ Here you can play a classic "memory"-game by matching two simliar cards. When al
 Follow this link to play the game: [Click here!](http://htmlpreview.github.io/?https://github.com/Hannybaby/memory/blob/master/index.html)  
 
 ## Code dependencies  
-The following dependencies are used: -jquery-library -bootstrap-framwork -
+The following dependencies are used: - jquery-library - bootstrap-framwork
