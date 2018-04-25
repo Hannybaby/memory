@@ -98,7 +98,7 @@ board.on('click', '.card:not(".match, .open")', function() {
     }
     //When all cards matched...
 
-    if (match === 1) { //8
+    if (match === 8) { //8
         rating(moves)
         let score = rating(moves).noOfStars
         clearTimeout(t)

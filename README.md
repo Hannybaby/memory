@@ -18,4 +18,4 @@ The following dependencies are used:
 
 * jquery-library 
 
-* bootstrap-framwork
+* bootstrap-framwork * Font: Coda
