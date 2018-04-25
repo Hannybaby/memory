@@ -11,5 +11,7 @@ Here you can play a classic "memory"-game by matching two simliar cards. When al
 
 ## Where to play 
 
-Follow this link to play the game: [Click here!](http://htmlpreview.github.io/?https://github.com/Hannybaby/memory/blob/master/index.html) ## Code Dependencies 
+Follow this link to play the game: [Click here!](http://htmlpreview.github.io/?https://github.com/Hannybaby/memory/blob/master/index.html)  
+
+## Code dependencies  
 The following dependencies are used: -jquery-library -bootstrap-framwork -
