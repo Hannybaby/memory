@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [How to play](#how-to-play)
-* [Where to play](#where-to-play) [Code dependencies](#dependencies)*
+* [Where to play](#where-to-play)* [Code dependencies](#dependencies)*
  
 
 ## How to play 
