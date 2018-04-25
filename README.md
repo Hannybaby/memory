@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Where to Play](#Where to play)
+* [Where to play](#where)* 
 
 ## Instructions
 
