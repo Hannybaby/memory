@@ -2,19 +2,22 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+* [How to play](#how-to-play)
+* [Where to play](#where-to-play)
+* [Code dependencies](##code-dependencies) 
 
-## Instructions
+## How to play 
+Here you can play a classic "memory"-game by matching two simliar cards. When all cards are matched you will see a summary of matches, time and stars you achieved. The faster you find all cards the more stars you'll get. By clicking the refresh button you can restart the game. 
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+## Where to play 
 
-To get started, open `js/app.js` and start building out the app's functionality
+Follow this link to play the game: [Click here!](http://htmlpreview.github.io/?https://github.com/Hannybaby/memory/blob/master/index.html)  
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+## Code dependencies  
+The following dependencies are used: 
 
-## Contributing
+* Library: jquery 
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+* Framework: bootstrap  
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+* Font: coda

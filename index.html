@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Matching Game</title>
     <meta name="description" content="">
-    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/app.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+
 <body>
 
     <div class="container">
@@ -19,50 +19,75 @@
 
         <section class="score-panel">
 
-            <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog" hidden="true" style="display: none;">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-
             <!--Stars-->
-        	<ul class="stars">
-        		<li><i class="fa fa-star star-one"></i></li>
-        		<li><i class="fa fa-star star-two"></i></li>
-        		<li><i class="fa fa-star star-three"></i></li>
-        	</ul>
+            <ul class="stars">
+                <li><i class="fa fa-star star-one"></i></li>
+                <li><i class="fa fa-star star-two"></i></li>
+                <li><i class="fa fa-star star-three"></i></li>
+            </ul>
 
-            <!--Moves-->  
-        	<span class="moves">0</span>
+            <!--Moves-->
+            <span class="moves">0</span>
             <div id="timer">Time:</div><time>00:00:00</time>
 
             <!--Restart-->
             <div class="restart">
-        		<i class="fa fa-repeat"></i>
-        	</div>
+                <i class="fa fa-repeat"></i>
+            </div>
+        </section>
+
+
+        <section class="modals">
+            <!-- Modal when all cards are matched -->
+            <div class="modal fade" id="result-modal" role="dialog" hidden="true" style="display: none;">
+                <div class="modal-dialog">
+
+                    <!-- modal content all matched-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Congrats! You matched all cards!</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div id="totalStars"></div>
+                            <div id="totalMoves"></div>
+                            <div id="totalTime"></div>
+                            <div class="yes-no"><button type="button" id="refresh" class="btn btn-default">Once again, please!</button></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Restart-modal-->
+
+            <div class="modal fade" id="restart-modal" role="dialog" hidden="true" style="display: none;">
+                <div class="modal-dialog">
+
+                    <!-- Modal content restart-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Would you like to restart?</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="yes-no"><button type="button" class="btn btn-default" data-dismiss="modal">No, not yet!</button></div>
+                            <div class="yes-no"><button type="button" id="refresh-panel" class="btn btn-default">Yes, please!</button></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
 
 
-  
-  
-    
-        <ul class="deck"> 
+
+
+
+
+        <ul class="deck">
             <li class="card">
                 <i class="fa fa-diamond"></i>
             </li>
@@ -115,6 +140,9 @@
     </div>
 
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/app.js"></script>
 </body>
+
 </html>
